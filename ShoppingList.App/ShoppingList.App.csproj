@@ -6,4 +6,9 @@
         <UseWPF>true</UseWPF>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\ShoppingList.Lib.Json\ShoppingList.Lib.Json.csproj" />
+      <ProjectReference Include="..\ShoppingList.Model\ShoppingList.Model.csproj" />
+    </ItemGroup>
+
 </Project>

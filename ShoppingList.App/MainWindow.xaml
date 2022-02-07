@@ -7,6 +7,30 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
+        <ListBox x:Name="ShopList"
+                 Grid.Column="0"/>
+        
+        <StackPanel Grid.Column="1">
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="Label_ProductId"
+                       Content="ID"/>
+                <TextBox x:Name="Input_ProductId"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="Label_ProductName"
+                       Content="Name"/>
+                <TextBox x:Name="Input_ProductName"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="Label_ProductComment"
+                       Content="Comment"/>
+                <TextBox x:Name="Input_ProductComment"/>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Window>
