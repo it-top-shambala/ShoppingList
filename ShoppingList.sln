@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingList.App", "ShoppingList.App\ShoppingList.App.csproj", "{19251307-ACE8-4944-A1F6-7DFED4B7762F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingList.Model", "ShoppingList.Model\ShoppingList.Model.csproj", "{28C9F2BE-94F5-43D4-8E25-917CCE3B3AC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingList.Lib.Json", "ShoppingList.Lib.Json\ShoppingList.Lib.Json.csproj", "{092258AB-2EBC-4866-9664-AB445161F885}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{19251307-ACE8-4944-A1F6-7DFED4B7762F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19251307-ACE8-4944-A1F6-7DFED4B7762F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19251307-ACE8-4944-A1F6-7DFED4B7762F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19251307-ACE8-4944-A1F6-7DFED4B7762F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28C9F2BE-94F5-43D4-8E25-917CCE3B3AC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28C9F2BE-94F5-43D4-8E25-917CCE3B3AC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28C9F2BE-94F5-43D4-8E25-917CCE3B3AC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28C9F2BE-94F5-43D4-8E25-917CCE3B3AC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{092258AB-2EBC-4866-9664-AB445161F885}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{092258AB-2EBC-4866-9664-AB445161F885}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{092258AB-2EBC-4866-9664-AB445161F885}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{092258AB-2EBC-4866-9664-AB445161F885}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
