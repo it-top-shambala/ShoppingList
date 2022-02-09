@@ -21,4 +21,29 @@
            BasedOn="{StaticResource Style_Default}">
         <Setter Property="Width" Value="250"/>
     </Style>
+    
+    <Style x:Key="Style_ListItem" TargetType="TextBlock">
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Foreground" Value="Blue"/>
+        <Setter Property="FontSize" Value="15"/>
+    </Style>
+    
+    <Style x:Key="Style_ButtonDefault" TargetType="Button"
+           BasedOn="{StaticResource Style_Default}">
+        <Setter Property="Width" Value="75"/>
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
+    <Style x:Key="Style_ButtonDel" TargetType="Button"
+           BasedOn="{StaticResource Style_ButtonDefault}">
+        <Setter Property="Background" Value="Red"/>
+    </Style>
+    <Style x:Key="Style_ButtonAdd" TargetType="Button"
+           BasedOn="{StaticResource Style_ButtonDefault}">
+        <Setter Property="Background" Value="Blue"/>
+    </Style>
+    <Style x:Key="Style_ButtonExport" TargetType="Button"
+           BasedOn="{StaticResource Style_ButtonDefault}">
+        <Setter Property="Background" Value="Green"/>
+    </Style>
+    
 </ResourceDictionary>

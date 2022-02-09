@@ -21,10 +21,12 @@
             </Grid.ColumnDefinitions>
 
             <ListBox x:Name="ShopList"
-                     Grid.Column="0">
+                     Grid.Column="0"
+                     SelectionChanged="ShopList_OnSelectionChanged">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <TextBlock Text="{Binding Path=Name}"/>
+                        <TextBlock Text="{Binding Path=Name}"
+                                   Style="{StaticResource Style_ListItem}"/>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
@@ -50,6 +52,20 @@
                            Style="{StaticResource Style_InputLabel}"/>
                     <TextBox x:Name="Input_ProductComment"
                              Style="{StaticResource Style_Input}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="Button_Delete"
+                            Content="Удалить"
+                            Style="{StaticResource Style_ButtonDel}"
+                            Click="Button_Delete_OnClick"/>
+                    <Button x:Name="Button_Add"
+                            Content="Добавить"
+                            Style="{StaticResource Style_ButtonAdd}"
+                            Click="Button_Add_OnClick"/>
+                    <Button x:Name="Button_Export"
+                            Content="Выгрузить"
+                            Style="{StaticResource Style_ButtonExport}"
+                            Click="Button_Export_OnClick"/>
                 </StackPanel>
             </StackPanel>
         </Grid>
