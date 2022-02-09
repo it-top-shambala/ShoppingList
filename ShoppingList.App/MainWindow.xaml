@@ -5,32 +5,48 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ShoppingList.App"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-
-        <ListBox x:Name="ShopList"
-                 Grid.Column="0"/>
+        Title="MainWindow" Height="450" Width="550">
+    <Window.Resources>
+        <ResourceDictionary Source="Styles.xaml"/>
+    </Window.Resources>
+    
+    <StackPanel>
+        <Label x:Name="Label_Title" Content="Список покупок"
+               Style="{StaticResource Style_Title}"/>
         
-        <StackPanel Grid.Column="1">
-            <StackPanel Orientation="Horizontal">
-                <Label x:Name="Label_ProductId"
-                       Content="ID"/>
-                <TextBox x:Name="Input_ProductId"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <ListBox x:Name="ShopList"
+                     Grid.Column="0"/>
+        
+            <StackPanel Grid.Column="1">
+                <StackPanel Orientation="Horizontal">
+                    <Label x:Name="Label_ProductId"
+                           Content="ID"
+                           Style="{StaticResource Style_InputLabel}"/>
+                    <TextBox x:Name="Input_ProductId"
+                             Style="{StaticResource Style_Input}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label x:Name="Label_ProductName"
+                           Content="Name"
+                           Style="{StaticResource Style_InputLabel}"/>
+                    <TextBox x:Name="Input_ProductName"
+                             Style="{StaticResource Style_Input}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label x:Name="Label_ProductComment"
+                           Content="Comment"
+                           Style="{StaticResource Style_InputLabel}"/>
+                    <TextBox x:Name="Input_ProductComment"
+                             Style="{StaticResource Style_Input}"/>
+                </StackPanel>
             </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <Label x:Name="Label_ProductName"
-                       Content="Name"/>
-                <TextBox x:Name="Input_ProductName"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <Label x:Name="Label_ProductComment"
-                       Content="Comment"/>
-                <TextBox x:Name="Input_ProductComment"/>
-            </StackPanel>
-        </StackPanel>
-    </Grid>
+        </Grid>
+    </StackPanel>
+    
 </Window>
