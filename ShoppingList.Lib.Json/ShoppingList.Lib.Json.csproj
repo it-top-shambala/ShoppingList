@@ -8,4 +8,10 @@
       <ProjectReference Include="..\ShoppingList.Model\ShoppingList.Model.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Update="shop_list.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
 </Project>

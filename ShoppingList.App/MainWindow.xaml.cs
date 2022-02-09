@@ -1,4 +1,7 @@
-﻿using System.Windows;
+﻿using System.Collections.Generic;
+using System.Windows;
+using ShoppingList.Lib.Json;
+using ShoppingList.Model;
 
 namespace ShoppingList.App
 {
@@ -7,6 +10,12 @@ namespace ShoppingList.App
         public MainWindow()
         {
             InitializeComponent();
+            
+            var res = JsonShopList.ImportFromJson("shop_list.json", out var list);
+            if (res)
+            {
+                ShopList.ItemsSource = list;
+            }
         }
     }
 }

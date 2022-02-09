@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
 using ShoppingList.Model;
@@ -7,11 +8,19 @@ namespace ShoppingList.Lib.Json
 {
     public static class JsonShopList
     {
-        public static void ImportFromJson(string path, out List<ShopListItem> shopList)
+        public static bool ImportFromJson(string path, out List<ShopListItem> shopList)
         {
-            //TODO обработать исключения
-            using var file = new FileStream(path, FileMode.Open, FileAccess.Read);
-            shopList = JsonSerializer.DeserializeAsync<List<ShopListItem>>(file).Result;
+            try
+            {
+                using var file = new FileStream(path, FileMode.Open, FileAccess.Read);
+                shopList = JsonSerializer.DeserializeAsync<List<ShopListItem>>(file).Result;
+                return true;
+            }
+            catch (Exception)
+            {
+                shopList = null;
+                return false;
+            }
         }
 
         public static void ExportToJson(string path, in List<ShopListItem> shopList)
