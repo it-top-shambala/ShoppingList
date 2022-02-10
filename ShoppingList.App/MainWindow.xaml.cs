@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
 using ShoppingList.Lib.Json;
@@ -9,14 +9,15 @@ namespace ShoppingList.App
 {
     public partial class MainWindow : Window
     {
-        private readonly List<ShopListItem> _list;
+        private readonly ObservableCollection<ShopListItem> _list;
         public MainWindow()
         {
             InitializeComponent();
             
-            var res = JsonShopList.ImportFromJson("shop_list.json", out _list);
+            var res = JsonShopList.ImportFromJson("shop_list.json", out var list);
             if (res)
             {
+                _list = new ObservableCollection<ShopListItem>(list);
                 ShopList.ItemsSource = _list;
             }
         }
@@ -32,20 +33,19 @@ namespace ShoppingList.App
         private void Button_Delete_OnClick(object sender, RoutedEventArgs e)
         {
             _list.Remove(ShopList.SelectedItem as ShopListItem);
-            ShopList.ItemsSource = null;
-            ShopList.ItemsSource = _list;
         }
 
         private void Button_Add_OnClick(object sender, RoutedEventArgs e)
         {
-            _list.Add(new ShopListItem
+            if (!string.IsNullOrWhiteSpace(Input_ProductName.Text))
             {
-                Id = Convert.ToInt32(Input_ProductId.Text),
-                Name = Input_ProductName.Text,
-                Comment = Input_ProductComment.Text
-            });
-            ShopList.ItemsSource = null;
-            ShopList.ItemsSource = _list;
+                _list.Add(new ShopListItem
+                {
+                    Id = Convert.ToInt32(Input_ProductId.Text),
+                    Name = Input_ProductName.Text,
+                    Comment = Input_ProductComment.Text
+                });
+            }
         }
 
         private void Button_Export_OnClick(object sender, RoutedEventArgs e)

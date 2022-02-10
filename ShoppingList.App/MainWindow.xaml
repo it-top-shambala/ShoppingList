@@ -60,8 +60,25 @@
                             Click="Button_Delete_OnClick"/>
                     <Button x:Name="Button_Add"
                             Content="Добавить"
-                            Style="{StaticResource Style_ButtonAdd}"
-                            Click="Button_Add_OnClick"/>
+                            Click="Button_Add_OnClick">
+                        <Button.Style>
+                            <Style>
+                                <Style.Setters>
+                                    <Setter Property="Button.Margin" Value="5"/>
+                                    <Setter Property="Button.FontSize" Value="15"/>
+                                    <Setter Property="Button.Width" Value="75"/>
+                                    <Setter Property="Button.Foreground" Value="White"/>
+                                    <Setter Property="Button.Background" Value="Blue"/>
+                                    <Setter Property="Button.IsEnabled" Value="True"/>
+                                </Style.Setters>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName=Input_ProductName, Path=Text}" Value="">
+                                        <Setter Property="Button.IsEnabled" Value="False"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
                     <Button x:Name="Button_Export"
                             Content="Выгрузить"
                             Style="{StaticResource Style_ButtonExport}"
